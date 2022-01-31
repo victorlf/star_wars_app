@@ -1,10 +1,9 @@
 import 'package:escribo_star_wars/core/themes/size_config.dart';
-import 'package:escribo_star_wars/widgets/home_app_bar.dart';
-import 'package:escribo_star_wars/widgets/list_item.dart';
-import 'package:escribo_star_wars/widgets/menu_button.dart';
+import 'package:escribo_star_wars/presenter/widgets/home_app_bar.dart';
+import 'package:escribo_star_wars/presenter/widgets/list_item.dart';
+import 'package:escribo_star_wars/presenter/widgets/menu_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

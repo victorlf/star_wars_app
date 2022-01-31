@@ -1,5 +1,4 @@
-import 'package:escribo_star_wars/core/themes/size_config.dart';
-import 'package:escribo_star_wars/widgets/home_app_bar.dart';
+import 'package:escribo_star_wars/presenter/widgets/home_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 

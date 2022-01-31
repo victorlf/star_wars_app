@@ -1,4 +1,4 @@
-import 'package:escribo_star_wars/screens/website_screen.dart';
+import 'package:escribo_star_wars/presenter/screens/website_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeAppBar extends StatelessWidget with PreferredSizeWidget {

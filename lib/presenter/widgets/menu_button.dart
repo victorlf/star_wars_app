@@ -22,7 +22,8 @@ class MenuButton extends StatelessWidget {
         side: isSelected
             ? const BorderSide(
                 width: 2.0,
-                color: Colors.blueAccent,
+                color: Colors
+                    .blueAccent, // TODO: Filmes-> blue, Personages->verde, Favoritos-> vermelho, imitando as cores dos lightsabers
               )
             : null,
       ),
