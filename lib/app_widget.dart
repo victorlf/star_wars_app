@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'core/themes/star_wars_theme.dart';
+import 'core/themes/app_theme.dart';
 import 'presenter/screens/home_screen.dart';
 
 class AppWidget extends StatelessWidget {

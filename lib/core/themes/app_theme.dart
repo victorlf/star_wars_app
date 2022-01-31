@@ -14,7 +14,7 @@ class AppTheme {
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        titleSpacing: 0.0,
+        titleSpacing: 8.0,
         //titleTextStyle: TextStyle(color: Colors.white),
       ),
       //scaffoldBackgroundColor: const Color(0xFF121212),
