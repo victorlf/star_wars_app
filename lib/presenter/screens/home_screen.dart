@@ -44,10 +44,9 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                   //shrinkWrap: true,
-                  itemCount: 8,
                   itemBuilder: (context, index) {
-                    return ListItem(text: 'Luke Skywalker', index: index);
-                  }),
+                return ListItem(text: 'Luke Skywalker', index: index);
+              }),
             ),
             SizedBox(
               height: SizeConfig.height * 0.05,

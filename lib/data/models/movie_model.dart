@@ -7,7 +7,7 @@ class MovieModel extends Equatable {
   final String created;
   final String director;
   final String edited;
-  final String episodeId;
+  final int episodeId;
   final String openingCrawl;
   final List<String> planets;
   final String producer;
@@ -95,4 +95,9 @@ class MovieModel extends Equatable {
         url,
         vehicles,
       ];
+
+  @override
+  String toString() {
+    return 'MovieModel(characters: $characters, created: $created, director: $director, edited: $edited, episodeId: $episodeId, openingCrawl: $openingCrawl, planets: $planets, producer: $producer, releaseDate: $releaseDate, species: $species, starships: $starships, title: $title, url: $url, vehicles: $vehicles)';
+  }
 }
