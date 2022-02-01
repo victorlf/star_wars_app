@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:escribo_star_wars/core/errors/exception.dart';
 import 'package:escribo_star_wars/core/http_client/http_client.dart';
-import 'package:escribo_star_wars/data/datasources/endpoints.dart';
+import 'package:escribo_star_wars/data/datasources/remote/endpoints.dart';
 import 'package:escribo_star_wars/data/models/character_model.dart';
 import 'package:escribo_star_wars/data/models/movie_model.dart';
 
