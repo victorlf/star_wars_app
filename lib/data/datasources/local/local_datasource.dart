@@ -37,6 +37,6 @@ class LocalDatasource {
     final db = await getDatabase();
     //final favoriteMap = favorite.toMap();
     return await db
-        .rawDelete('DELETE FROM $_tableName WHERE id = ?', [favorite.id]);
+        .rawDelete('DELETE FROM $_tableName WHERE name = ?', [favorite.name]);
   }
 }

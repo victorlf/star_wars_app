@@ -19,7 +19,7 @@ class ApiCubit extends Cubit<ApiState> {
   List<CharacterModel> charactersCountList = [];
   List<String> favoriteNamesList = [];
   var nextPage = 1;
-  var isLoagingRestOfCharacters = false;
+  var isLoadingRestOfCharacters = false;
 
   void getAllMovies() async {
     fillFavorites();
@@ -46,13 +46,13 @@ class ApiCubit extends Cubit<ApiState> {
         emit(ApiLoading());
         l = await removeRepository.getAllCharacters();
       } else {
-        isLoagingRestOfCharacters = true;
+        isLoadingRestOfCharacters = true;
         emit(ApiSuccess(
             charactersList: charactersCountList, dataType: DataType.Character));
         nextPage++;
         l = await removeRepository.getAllCharacters(nextPage: nextPage);
       }
-      isLoagingRestOfCharacters = false;
+      isLoadingRestOfCharacters = false;
       l.fold((e) {
         debugPrint(e.toString());
         emit(ApiError());
@@ -79,6 +79,7 @@ class ApiCubit extends Cubit<ApiState> {
       if (type == DataType.Movie) {
         getAllMovies();
       } else {
+        emit(ApiLoading());
         getAllCharacters();
       }
     });
@@ -123,6 +124,7 @@ class ApiCubit extends Cubit<ApiState> {
       if (type == DataType.Movie) {
         getAllMovies();
       } else {
+        emit(ApiLoading());
         getAllCharacters();
       }
     });

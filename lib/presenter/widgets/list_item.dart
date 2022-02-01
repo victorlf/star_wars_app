@@ -37,7 +37,13 @@ class ListItem extends StatelessWidget {
                 isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart),
             onPressed: () {
               isFavorite
-                  ? removeFavorite()
+                  ? removeFavorite(
+                      FavoriteModel(
+                          id: 0,
+                          name: text,
+                          url: url,
+                          type: type == DataType.Movie ? 'movie' : 'character'),
+                      type)
                   : turnFavorite(
                       FavoriteModel(
                           id: 0,

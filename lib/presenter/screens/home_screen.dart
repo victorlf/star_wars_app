@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   }),
                               if (context
                                   .read<ApiCubit>()
-                                  .isLoagingRestOfCharacters)
+                                  .isLoadingRestOfCharacters)
                                 const Positioned(
                                     left: 150,
                                     bottom: 0,
