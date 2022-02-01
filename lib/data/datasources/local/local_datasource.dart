@@ -1,8 +1,4 @@
-import 'dart:convert';
-
-import 'package:equatable/equatable.dart';
 import 'package:escribo_star_wars/data/models/favorite_model.dart';
-import 'package:sqflite/sqflite.dart';
 
 import 'app_database.dart';
 

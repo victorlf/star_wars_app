@@ -13,7 +13,7 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
         child: ClipPath(
           clipper: MyCustomClipper(),
           child: Container(
-            margin: EdgeInsets.all(0.0),
+            margin: const EdgeInsets.all(0.0),
             width: 120,
             height: 50,
             alignment: Alignment.center,

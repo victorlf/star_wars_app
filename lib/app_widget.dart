@@ -1,6 +1,5 @@
 import 'package:escribo_star_wars/controller/cubit/api_cubit.dart';
 import 'package:escribo_star_wars/controller/cubit/home_menu_cubit.dart';
-import 'package:escribo_star_wars/core/http_client/http_client_imp.dart';
 import 'package:escribo_star_wars/injections.dart' as injection;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

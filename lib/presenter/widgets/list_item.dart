@@ -1,6 +1,5 @@
 import 'package:escribo_star_wars/constants/enums.dart';
 import 'package:escribo_star_wars/data/models/favorite_model.dart';
-import 'package:escribo_star_wars/presenter/widgets/favorite_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

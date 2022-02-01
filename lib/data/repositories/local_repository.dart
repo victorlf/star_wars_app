@@ -1,10 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:escribo_star_wars/core/errors/failures.dart';
 import 'package:escribo_star_wars/data/datasources/local/local_datasource.dart';
-import 'package:escribo_star_wars/data/datasources/remote/remote_datasource.dart';
-import 'package:escribo_star_wars/data/models/character_model.dart';
 import 'package:escribo_star_wars/data/models/favorite_model.dart';
-import 'package:escribo_star_wars/data/models/movie_model.dart';
 
 class LocalRepository {
   final LocalDatasource datasource;

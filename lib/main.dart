@@ -1,12 +1,7 @@
 import 'dart:io';
 
-import 'package:dartz/dartz.dart';
-import 'package:escribo_star_wars/data/datasources/local/local_datasource.dart';
-import 'package:escribo_star_wars/data/models/favorite_model.dart';
-import 'package:escribo_star_wars/data/repositories/local_repository.dart';
 import 'package:flutter/material.dart';
 import 'app_widget.dart';
-import 'core/errors/failures.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override

@@ -71,6 +71,7 @@ class ApiCubit extends Cubit<ApiState> {
   }
 
   void saveFavorite(FavoriteModel favorite, DataType type) async {
+    emit(ApiLoading());
     final result = await localRepository.save(favorite);
     result.fold((e) {
       debugPrint(e.toString());
@@ -79,7 +80,6 @@ class ApiCubit extends Cubit<ApiState> {
       if (type == DataType.Movie) {
         getAllMovies();
       } else {
-        emit(ApiLoading());
         getAllCharacters();
       }
     });
@@ -116,6 +116,7 @@ class ApiCubit extends Cubit<ApiState> {
   }
 
   void removeFavorite(FavoriteModel favorite, DataType type) async {
+    emit(ApiLoading());
     final result = await localRepository.remove(favorite);
     result.fold((e) {
       debugPrint(e.toString());
@@ -124,7 +125,6 @@ class ApiCubit extends Cubit<ApiState> {
       if (type == DataType.Movie) {
         getAllMovies();
       } else {
-        emit(ApiLoading());
         getAllCharacters();
       }
     });
