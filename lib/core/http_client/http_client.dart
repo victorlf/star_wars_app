@@ -1,5 +1,5 @@
 abstract class IHttpClient {
-  Future<HttpResponse> get(Uri uri);
+  Future<HttpResponse> get(String url);
 }
 
 class HttpResponse {

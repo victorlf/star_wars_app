@@ -6,7 +6,14 @@ import 'package:flutter/material.dart';
 class MenuButton extends StatelessWidget {
   final String text;
   final bool isSelected;
-  const MenuButton({required this.text, required this.isSelected, Key? key})
+  final Function selectMenuItem;
+  final Color selectedBorderColor;
+  const MenuButton(
+      {required this.text,
+      required this.isSelected,
+      required this.selectMenuItem,
+      this.selectedBorderColor = Colors.blueAccent,
+      Key? key})
       : super(key: key);
 
   @override
@@ -20,15 +27,16 @@ class MenuButton extends StatelessWidget {
           40.0,
         ),
         side: isSelected
-            ? const BorderSide(
+            ? BorderSide(
                 width: 2.0,
-                color: Colors
-                    .blueAccent, // TODO: Filmes-> blue, Personages->verde, Favoritos-> vermelho, imitando as cores dos lightsabers
+                color: selectedBorderColor,
               )
             : null,
       ),
       child: Text(text),
-      onPressed: () {},
+      onPressed: () {
+        selectMenuItem(text);
+      },
     );
   }
 }

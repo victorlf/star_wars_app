@@ -18,9 +18,12 @@ class ListItem extends StatelessWidget {
             text,
             textAlign: TextAlign.center,
           ),
-          trailing: Icon(index % 2 == 0
-              ? CupertinoIcons.heart
-              : CupertinoIcons.heart_fill),
+          trailing: IconButton(
+            icon: Icon(index % 2 == 0
+                ? CupertinoIcons.heart
+                : CupertinoIcons.heart_fill),
+            onPressed: () {},
+          ),
         ),
       ),
     );

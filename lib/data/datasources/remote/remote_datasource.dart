@@ -22,12 +22,17 @@ class RemoteDatasource {
     }
   }
 
-  Future<List<CharacterModel>> getAllCharacters() async {
-    final response = await client.get(Endpoints.characters());
+  Future<List<CharacterModel>> getAllCharacters({int? nextPage}) async {
+    HttpResponse response;
+    if (nextPage != null) {
+      response = await client.get('${Endpoints.characters()}?page=$nextPage');
+    } else {
+      response = await client.get(Endpoints.characters());
+    }
     if (response.statusCode == 200) {
       final data = json.decode(response.data);
       return List<CharacterModel>.from(
-          data.map((x) => CharacterModel.fromMap(x)));
+          data['results'].map((x) => CharacterModel.fromMap(x)));
     } else {
       return throw ServerException;
     }
