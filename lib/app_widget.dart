@@ -29,7 +29,7 @@ class _AppWidgetState extends State<AppWidget> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => HomeMenuCubit()),
-        BlocProvider(create: (context) => ApiCubit(i())),
+        BlocProvider(create: (context) => ApiCubit(i(), i())),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

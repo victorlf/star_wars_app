@@ -4,7 +4,9 @@ import 'package:escribo_star_wars/controller/cubit/home_menu_cubit.dart';
 import 'package:escribo_star_wars/core/themes/app_progress_indicator.dart';
 import 'package:escribo_star_wars/core/themes/size_config.dart';
 import 'package:escribo_star_wars/data/models/character_model.dart';
+import 'package:escribo_star_wars/data/models/favorite_model.dart';
 import 'package:escribo_star_wars/data/models/movie_model.dart';
+import 'package:escribo_star_wars/presenter/widgets/favorite_item.dart';
 import 'package:escribo_star_wars/presenter/widgets/home_app_bar.dart';
 import 'package:escribo_star_wars/presenter/widgets/list_item.dart';
 import 'package:escribo_star_wars/presenter/widgets/menu_button.dart';
@@ -56,6 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
               context.read<ApiCubit>().getAllMovies();
             } else if (state.menuItem == 'Personagens') {
               context.read<ApiCubit>().getAllCharacters();
+            } else if (state.menuItem == 'Favoritos') {
+              context.read<ApiCubit>().findAllFavorites();
             }
           },
           builder: (context, state) {
@@ -105,9 +109,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               itemCount: list.length,
                               itemBuilder: (context, index) {
                                 return ListItem(
-                                    text: list[index].title, index: index);
+                                  text: list[index].title,
+                                  url: list[index].url,
+                                  type: DataType.Movie,
+                                  isFavorite: context
+                                      .read<ApiCubit>()
+                                      .favoriteNamesList
+                                      .contains(list[index].title),
+                                  turnFavorite:
+                                      context.read<ApiCubit>().saveFavorite,
+                                  removeFavorite:
+                                      context.read<ApiCubit>().removeFavorite,
+                                );
                               });
-                        } else {
+                        } else if (state.dataType == DataType.Character) {
                           List<CharacterModel> list = state.charactersList!;
                           return Stack(
                             children: [
@@ -116,17 +131,39 @@ class _HomeScreenState extends State<HomeScreen> {
                                   itemCount: list.length,
                                   itemBuilder: (context, index) {
                                     return ListItem(
-                                        text: list[index].name, index: index);
+                                      text: list[index].name,
+                                      url: list[index].url,
+                                      type: DataType.Character,
+                                      isFavorite: context
+                                          .read<ApiCubit>()
+                                          .favoriteNamesList
+                                          .contains(list[index].name),
+                                      turnFavorite:
+                                          context.read<ApiCubit>().saveFavorite,
+                                      removeFavorite: context
+                                          .read<ApiCubit>()
+                                          .removeFavorite,
+                                    );
                                   }),
                               if (context
                                   .read<ApiCubit>()
                                   .isLoagingRestOfCharacters)
-                                Positioned(
+                                const Positioned(
                                     left: 150,
                                     bottom: 0,
                                     child: AppProgressIndicator()),
                             ],
                           );
+                        } else {
+                          List<FavoriteModel> list = state.favoriteList!;
+                          return ListView.builder(
+                              itemCount: list.length,
+                              itemBuilder: (context, index) {
+                                return FavoriteItem(
+                                  text: list[index].name,
+                                  type: list[index].type,
+                                );
+                              });
                         }
                       }
                       return const SizedBox();
