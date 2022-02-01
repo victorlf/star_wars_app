@@ -42,6 +42,7 @@ dependencies:
   get_it: ^7.2.0
   sqflite: ^2.0.2
   path: ^1.8.0
+  fluttermoji: ^0.2.3
 
 dev_dependencies:
   flutter_test:

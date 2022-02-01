@@ -1,5 +1,7 @@
+import 'package:escribo_star_wars/presenter/screens/customize_emoji_screen.dart';
 import 'package:escribo_star_wars/presenter/screens/website_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttermoji/fluttermoji.dart';
 
 class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   const HomeAppBar({Key? key}) : super(key: key);
@@ -31,12 +33,18 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
         },
       ),
       actions: <Widget>[
-        IconButton(
-          icon: const Icon(Icons.person),
-          tooltip: 'Customizar Avatar',
-          onPressed: () {
-            // handle the press
-          },
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            child: FluttermojiCircleAvatar(
+              backgroundColor: Colors.grey[200],
+              radius: 30.0,
+            ),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CustomizeEmojiScreen())),
+          ),
         ),
       ],
     );
