@@ -8,4 +8,4 @@ Criar um App que consuma a [SWAPI](https://swapi.dev/) uma API de Star Wars. Ass
 
 ## Como usar
 
-Basta compilar a aplicação apra Android ou baixar a APK [desse link]().
+Basta compilar a aplicação apra Android ou baixar a APK [desse link](https://drive.google.com/file/d/1ErWbHyZME8SH1Yq6o04nOhfolz5N9cND/view?usp=sharing).
